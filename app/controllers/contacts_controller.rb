@@ -4,7 +4,8 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[contact_params])
+    @contact = Contact.new(contact_params)
+
     if @contact.valid?
       @contact.save
     else
