@@ -1,14 +1,15 @@
+<%= link_to 'Main page', articles_path %>
+<br>
+
 <h1><%= @article.title %></h1>
 
 <h3>
   <%= @article.text %>
 </h3>
 <br>
-<%= link_to 'Main page', articles_path %>
-<br>
 
 <h4>Comments</h4>
-<br>
+
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
     <p>
@@ -20,20 +21,26 @@
       <%= f.text_area :body%>
     </p>
     <p>
-      <%= f.submit %>
+      <%= f.submit 'Submit comment' %>
     </p>
   <% end %>
 </p>
 
 <% @comments.each do |comm| %>
     <p>
-      <%= comm.body %>
+      <b>
+        <%= comm.body %>
+      </b>
     </p>
     <p> Posted by:
-      <%= comm.author %>
+      <i>
+        <%= comm.author %>
+      </i>
     </p>
     <p>
-      <%= comm.created_at %>
+      <small>
+        <%= comm.created_at %>
+      </small>
     </p>
     <br>
 <% end %>
