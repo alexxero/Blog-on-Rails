@@ -1,7 +1,23 @@
 <h1><%= @article.title %></h1>
 
-<p>
+<h3>
   <%= @article.text %>
-</p>
+</h3>
 
 <%= link_to 'Main page', articles_path %>
+
+<p>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+      <%= f.label :author%><br/>
+      <%= f.text_field :author%>
+    </p>
+    <p>
+      <%= f.label :body%><br/>
+      <%= f.text_area :body%>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</p>
