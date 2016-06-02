@@ -4,6 +4,12 @@
 
 <% @articles.each do |a| %>
 
+    <% if @articles.size == 0 %>
+
+        <em>No entries found.</em>
+
+    <% end %>
+
     <h3>
       <%= a.title %>
     </h3>
