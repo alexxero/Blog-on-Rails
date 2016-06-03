@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
 
-  def new
+  before_filter :authenticate_user! 
 
+  def new
   end
 
   def create
