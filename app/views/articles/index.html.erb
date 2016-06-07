@@ -1,27 +1,31 @@
-<h1>Articles</h1>
+<div class="container">
+  <div class="row">
+    <h1>Articles</h1>
 
-<%= link_to "Add article", new_article_path %>
+    <%= link_to "Add article", new_article_path %>
 
-<% @articles.each do |a| %>
+    <% @articles.each do |a| %>
 
-    <% if @articles.size == 0 %>
+        <% if @articles.size == 0 %>
 
-        <em>No entries found.</em>
+            <em>No entries found.</em>
 
+        <% end %>
+
+        <h3>
+          <%= a.title %>
+        </h3>
+        <p>
+          <%= a.text %>
+
+        <p>
+          <%= link_to 'Read more', article_path(a) %> |
+          <%= link_to 'Edit', edit_article_path(a) %> |
+          <%= link_to "Delete article", a, method: :delete, data: {confirm: "You sure?"} %>
+        </p>
+
+        <hr>
+        </p>
     <% end %>
-
-    <h3>
-      <%= a.title %>
-    </h3>
-    <p>
-    <%= a.text %>
-
-    <p>
-      <%= link_to 'Read more', article_path(a) %> |
-      <%= link_to 'Edit', edit_article_path(a) %> |
-      <%= link_to "Delete article", a, method: :delete, data: {confirm: "You sure?"} %>
-    </p>
-
-    <hr>
-  </p>
-<% end %>
+  </div>
+</div>

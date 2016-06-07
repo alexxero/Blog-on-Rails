@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,7 +15,7 @@
 Hello, <%= current_user.username %>! | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 
     <br />
-    <br />
+
 
     <%= link_to 'Main page', articles_path %>
 
