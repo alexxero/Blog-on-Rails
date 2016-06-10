@@ -3,13 +3,13 @@
 <%= form_for :article, url: '/articles' do |f| %>
   <p>
     <%= f.label :title%><br/>
-    <%= f.text_field :title%>
+    <%= f.text_field :title, class: 'form-control' %>
   </p>
   <p>
     <%= f.label :text%><br/>
-    <%= f.text_area :text%>
+    <%= f.text_area :text, class: 'form-control' %>
   </p>
   <p>
-    <%= f.submit 'Submit', class: 'btn btn-success' %>
+    <%= f.submit 'Submit', class: 'btn btn-success', :html => { :style => 'height: 120px' } %>
   </p>
 <%end%>
