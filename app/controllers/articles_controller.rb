@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.author = current_user.username
 
     if @article.valid?
       @article.save

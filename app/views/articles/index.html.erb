@@ -17,7 +17,10 @@
         </h3>
         <p>
           <%= a.text %>
-
+        </p>
+        <p>
+          By <%= a.author %>
+        </p>
         <p>
           <%= link_to 'Read more', article_path(a) %> |
           <%= link_to 'Edit', edit_article_path(a) %> |
