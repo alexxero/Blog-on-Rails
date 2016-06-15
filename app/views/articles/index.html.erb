@@ -19,9 +19,9 @@
           By <b> <%= a.author %> </b>
         </p>
         <p>
-          <%= link_to 'Read more', article_path(a) %> |
+          <%= link_to 'Read more', article_path(a) %> <% if a.author == current_user.username %> |
           <%= link_to 'Edit', edit_article_path(a) %> |
-          <%= link_to "Delete article", a, method: :delete, data: {confirm: "You sure?"} %>
+          <%= link_to "Delete article", a, method: :delete, data: {confirm: "You sure?"} %> <%end%>
         </p>
 
         <hr>
