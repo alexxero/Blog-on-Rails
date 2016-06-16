@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!
+  before_action :check_auth, :only => [:edit, :update, :destroy]
 
   def new
   end
@@ -50,6 +51,15 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def check_auth
+    @article = Article.find(params[:id])
+
+    if session[:author] != @article.author
+      flash[:notice] = 'Sorry, you can\'t edit this post'
+      redirect_to root_path
+    end
   end
 
 end
