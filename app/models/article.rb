@@ -7,4 +7,8 @@ class Article < ActiveRecord::Base
     title
   end
 
+  def last_comment
+    comments.last
+  end
+
 end
