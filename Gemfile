@@ -49,6 +49,7 @@ gem 'devise'
 gem 'bootstrap-sass', '2.3.2.0'
 
 group :test, :development do
-  gem 'rspec-rails', '~>2.4'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
   gem 'capybara'
 end
