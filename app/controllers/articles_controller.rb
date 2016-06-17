@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
   def check_auth
     @article = Article.find(params[:id])
 
-    if session[:author] != @article.author
+    if current_user.username != @article.author
       flash[:notice] = 'Sorry, you can\'t edit this post'
       redirect_to root_path
     end
