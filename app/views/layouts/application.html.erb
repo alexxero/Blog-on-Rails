@@ -45,8 +45,11 @@
       </div>
 
     </nav>
-    <p class="notice alert-info"><%= notice %></p>
-    <p class="alert"><%= alert %></p>  <!--alert-warning-->
+    <% if notice %>
+      <p class="notice alert-info text-center"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert alert-warning text-center"><%= alert %></p>  <!--alert-warning-->
+    <% end %>
     <%= yield %>
   </div>
 
