@@ -1,3 +1,5 @@
+require 'capybara/rspec'
+
 RSpec.configure do |config|
 
   config.before(:suite) do
@@ -9,6 +11,14 @@ RSpec.configure do |config|
     DatabaseCleaner.cleaning do
       example.run
     end
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.append_after(:each) do
+    DatabaseCleaner.clean
   end
 
 end
