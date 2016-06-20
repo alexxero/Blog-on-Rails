@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Comment Creation' do
+feature 'Article Updating' do
   before(:each) do
     auto_sign_in
   end
@@ -11,9 +11,8 @@ feature 'Comment Creation' do
     fill_in :article_text, :with => 'New Article text'
     click_button 'Submit'
 
-    visit '/articles/1'
-    fill_in :comment_body, :with => 'TestComment'
-    click_button 'Submit comment'
-    expect(page).to have_content 'TestComment'
+    visit articles_path #'/articles/1'
+    click_link('Edit')
+    expect(page).to have_content I18n.t('articles.edit_article')
   end
 end
