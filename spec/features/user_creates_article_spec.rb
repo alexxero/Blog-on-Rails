@@ -15,7 +15,7 @@ feature 'Article Creation' do
     fill_in :article_title, :with => 'New Article title'
     fill_in :article_text, :with => 'New Article text'
     click_button 'Submit'
-    #expect(page).to have_content I18n.t('articles.new_article')
+    expect(page).to have_content 'New Article title'
   end
 
 end
