@@ -23,6 +23,9 @@
           <%= link_to 'Edit', edit_article_path(a) %> |
           <%= link_to 'Delete article', a, method: :delete, data: {confirm: 'You sure?'} %> <%end%>
         </p>
+        <p>
+          Comments: <%= a.comments.size %>
+        </p>
 
         <hr>
         </p>
