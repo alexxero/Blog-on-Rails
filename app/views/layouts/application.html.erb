@@ -46,9 +46,9 @@
 
     </nav>
     <% if notice %>
-      <p class="notice alert-info text-center"><%= notice %></p>
+      <div class="notice alert-info" style="padding: 10px 15px; width: max-content; border-radius: 7%; margin: auto;"><%= notice %></div>
     <% elsif alert %>
-      <p class="alert alert-warning text-center"><%= alert %></p>  <!--alert-warning-->
+      <div class="alert alert-warning" style="padding: 10px 15px; width: max-content; border-radius: 7%; margin: auto;"><%= alert %></div>
     <% end %>
     <%= yield %>
   </div>
@@ -56,8 +56,8 @@
 </body>
 <script>
   $(function () {
-    $('.notice').fadeOut(2000);
-    $('.alert').fadeOut(2000);
+    $('.notice').fadeOut(5000);
+    $('.alert').fadeOut(5000);
   })
 </script>
 </html>

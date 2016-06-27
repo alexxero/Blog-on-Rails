@@ -17,3 +17,4 @@
 /tmp
 
 db/development.sqlite
+npm-debug.log
