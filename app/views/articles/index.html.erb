@@ -23,10 +23,10 @@
         <p>
           <%= link_to 'Read more', article_path(a) %> <% if a.author == current_user.username %> |
           <%= link_to 'Edit', edit_article_path(a) %> |
-          <%= link_to 'Delete article', a, method: :delete, data: {confirm: 'You sure?'} %> <%end%>
+          <%= link_to 'Delete', a, method: :delete, data: {confirm: 'You sure?'} %> <%end%>
         </p>
         <p>
-          Comments: <%= a.comments.size %>
+          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <%= a.comments.size %>
         </p>
 
         <hr>
