@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
 
+    <% if @articles.size == 0 %>
+
+        <em>No entries found.</em>
+
+    <% end %>
+
     <% @articles.each do |a| %>
-
-        <% if @articles.size == 0 %>
-
-            <em>No entries found.</em>
-
-        <% end %>
 
         <p class="text-muted"><small><i><%= a.created_at %></i></small></p>
 
