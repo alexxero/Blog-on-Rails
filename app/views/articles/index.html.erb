@@ -19,6 +19,7 @@
         </p>
         <p>
           By <b> <%= a.author %> </b>
+          <%= image_tag(current_user.avatar.url(:small)) %>
         </p>
         <p>
           <%= link_to 'Read more', article_path(a) %> <% if a.author == current_user.username %> |
