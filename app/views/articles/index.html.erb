@@ -8,26 +8,30 @@
     <% end %>
 
     <% @articles.each do |a| %>
-
-        <p class="text-muted"><small><i><%= a.created_at %></i></small></p>
+        <% if a.created_at == a.updated_at %>
+          <p class="text-muted"><small><i> Sumbitted <%= time_ago_in_words(a.created_at) %> ago </i></small></p>
+        <% else %>
+            <p class="text-muted"><small><i> Updated <%= time_ago_in_words(a.updated_at) %> ago </i></small></p>
+        <% end %>
 
         <h3>
-          <%= a.title %>
+          <%= link_to a.title, a %>
         </h3>
-        <p>
+
+        <h4>
           <%= a.text %>
+        </h4>
+        <p>
+          <small>From</small> <b> <%= a.author %> </b>
+
         </p>
         <p>
-          By <b> <%= a.author %> </b>
-          <%= image_tag(current_user.avatar.url(:small)) %>
-        </p>
-        <p>
-          <%= link_to 'Read more', article_path(a) %> <% if a.author == current_user.username %> |
+          <% if a.author == current_user.username %> |
           <%= link_to 'Edit', edit_article_path(a) %> |
-          <%= link_to 'Delete', a, method: :delete, data: {confirm: 'You sure?'} %> <%end%>
+          <%= link_to 'Delete', a, method: :delete, data: {confirm: 'Delete article?'} %> <%end%>
         </p>
         <p>
-          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <%= a.comments.size %>
+          <span class="glyphicon glyphicon-comment" aria-hidden="true" style="margin-right: 0.5em"></span><%= link_to a.comments.size, a %>
         </p>
 
         <hr>

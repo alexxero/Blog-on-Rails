@@ -7,7 +7,7 @@
 <br>
 
 <p>
-  <%= @article.created_at %> by <b> <%= @article.author %> </b>
+  <%= time_ago_in_words(@article.created_at) %> by <b>  <%= image_tag(@user.avatar.url(:med)) %> <%= @article.author %> </b>
 </p>
 
 <h4 class="text-muted">Comments</h4>
@@ -31,7 +31,7 @@
         <%= comm.body %>
       </b>
     </p>
-    <p> By
+    <p>
       <i>
         <%= comm.author %>
       </i>
