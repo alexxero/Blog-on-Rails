@@ -7,11 +7,11 @@
 <br>
 
 <p>
-  <%= time_ago_in_words(@article.created_at) %> by <b>  <%= image_tag(@user.avatar.url(:med)) %> <%= @article.author %> </b>
+  <%= time_ago_in_words(@article.created_at) %> ago by <b>  <%= image_tag(@user.avatar.url(:small)) %> <%= @article.author %> </b>
 </p>
 
-<h4 class="text-muted">Comments</h4>
-
+<h4 class="text-muted"> <%= @article.comments.count %> Comments</h4>
+<% if user_signed_in? %>
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
 
@@ -24,7 +24,11 @@
     </p>
   <% end %>
 </p>
-
+<% else %>
+    <br>
+    <p style="color: yellowgreen; font-weight: 600;"><i>You must be signed in to comment</i></p>
+    <br>
+<% end %>
 <% @article.comments.each do |comm| %>
     <p>
       <b>
