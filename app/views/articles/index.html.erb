@@ -27,7 +27,7 @@
         </p>
         <p>
           <% if user_signed_in? %>
-            <% if a.author == current_user.username %> |
+            <% if a.author == current_user.username %>
             <%= link_to 'Edit', edit_article_path(a) %> |
             <%= link_to 'Delete', a, method: :delete, data: {confirm: 'Delete article?'} %> <%end%>
           <%end%>

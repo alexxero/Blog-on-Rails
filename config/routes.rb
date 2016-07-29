@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resource :contacts, only: [:new, :create], path_names: {:new => ''}
   resources :articles do
     resources :comments, only: [:create]
+    member do
+      put 'like' => 'articles#upvote'
+      put 'dislike' => 'articles#downvote'
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,7 +3,22 @@
 <h3>
   <%= @article.text %>
 </h3>
+<br>
+<div class="caption" style="text-align: left;">
+  <%= link_to like_article_path(@article), class: 'like', method: :put do %>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="border-color: transparent;">
+        <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true" ></span>
+        <span class="badge"><%= @article.get_upvotes.size %></span>
+      </button>
+  <% end  %>
 
+  <%= link_to dislike_article_path(@article), class: 'like', method: :put do %>
+      <button type="button" class="btn btn-default" aria-label="Left Align" style="border-color: transparent;">
+        <span class="glyphicon glyphicon-thumbs-down glyphicon-align-left" aria-hidden="true" ></span>
+        <span class="badge"><%= @article.get_downvotes.size %></span>
+      </button>
+  <% end  %>
+</div>
 <br>
 
 <p>

@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
+  acts_as_votable
   has_many :comments
-  belongs_to :user
+  has_one :user
   validates :title, presence: true
   validates :title, length: { maximum: 140 }
   validates :text, presence: true
