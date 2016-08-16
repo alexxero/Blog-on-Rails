@@ -7,17 +7,19 @@
       <h2 class="blog-post-title"><%= link_to a.title, a %></h2>
       <p class="blog-post-meta">Submitted <%= time_ago_in_words(a.created_at) %> ago by <a href="#"><%= a.author %></a></p>
 
-      <p><%= a.text %></p>
-      <p>
-          <span class="glyphicon glyphicon-comment" aria-hidden="true" style="margin-right: 0.5em"></span><%= link_to a.comments.size, a %>
+      <p>        
+        <%= a.text %>
       </p>
+      <br>
       <p>
-        <% if user_signed_in? %>
+          <span class="glyphicon glyphicon-comment" aria-hidden="true" style="margin-right: 0.5em"></span><%= link_to a.comments.size, a %> |
+          <!-- Checking for user's priveleges -->
           <% if a.author == current_user.username %>
-              <%= link_to 'Edit', edit_article_path(a) %> |
-              <%= link_to 'Delete', a, method: :delete, data: {confirm: 'Delete article?'} %> <%end%>
-        <%end%>
+          <span class="glyphicon glyphicon-edit" aria-hidden="true" style="margin-right: 0.5em; margin-left: 5px;"></span><%= link_to 'Edit', edit_article_path(a) %> |
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" style="margin-right: 0.5em"></span><%= link_to 'Delete', a, method: :delete, data: {confirm: 'Delete article?'} %>
+          <% end %>
       </p>
+
           <hr>
       <% end %>
 
