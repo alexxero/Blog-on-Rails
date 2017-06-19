@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails Blog-on-Rails: test" uuid="1fd70c93-5250-4d84-9748-fb4fb9cb185c" />
+    <data-source name="Rails Blog-on-Rails: test" uuid="1fd70c93-5250-4d84-9748-fb4fb9cb185c">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
     <data-source name="Rails Blog-on-Rails: development" uuid="fbeba91a-e5c5-47c5-a303-b2e67c21d9ca">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <auth-required>false</auth-required>
       <first-sync>true</first-sync>
     </data-source>
