@@ -54,6 +54,13 @@ group :test, :development do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
-  gem 'paperclip'
-  gem 'acts_as_votable'
 end
+
+gem 'paperclip'
+gem 'acts_as_votable'
+
+
+gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1'
